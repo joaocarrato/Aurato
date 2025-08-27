@@ -1,8 +1,9 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { ThemeProvider } from '@shopify/restyle';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { Text } from '@components';
 import { theme } from '@theme';
 
 function App() {
@@ -10,12 +11,7 @@ function App() {
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
         <View style={{ marginTop: 50, marginHorizontal: 20 }}>
-          <Text style={{ fontSize: 20 }}>Olá</Text>
-          <Text
-            style={{ fontSize: 20, fontFamily: 'Roboto Condensed SemiBold' }}
-          >
-            Olá
-          </Text>
+          <Text>Olá</Text>
         </View>
       </ThemeProvider>
     </SafeAreaProvider>
