@@ -23,7 +23,6 @@ export function Text({
   ...srTextProps
 }: TextProps) {
   const fontFamily = getFontFamily(semiBold, bold);
-
   return (
     <SRText
       style={[$fontSizes[preset], { fontFamily }, style]}
