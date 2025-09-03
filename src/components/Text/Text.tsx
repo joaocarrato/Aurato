@@ -26,6 +26,7 @@ export function Text({
   return (
     <SRText
       style={[$fontSizes[preset], { fontFamily }, style]}
+      color="textSpan"
       {...srTextProps}
     >
       {children}

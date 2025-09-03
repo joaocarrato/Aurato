@@ -1,21 +1,18 @@
-import { View } from 'react-native';
-
 import { ThemeProvider } from '@shopify/restyle';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Button, Icon, Text } from '@components';
+import { Button, Screen, Text } from '@components';
 import { theme } from '@theme';
 
 function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <View style={{ marginTop: 50, marginHorizontal: 20 }}>
+        <Screen>
           <Text>Olá</Text>
-          <Icon name="arrowCircleDown" color="accentBlue" />
 
           <Button title="Logar" />
-        </View>
+        </Screen>
       </ThemeProvider>
     </SafeAreaProvider>
   );
