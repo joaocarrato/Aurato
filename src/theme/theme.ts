@@ -32,6 +32,9 @@ export const theme = createTheme({
 
     primary: palette.backgroundPrimary,
     primaryContrast: palette.textSpan,
+
+    buttonPrimary: palette.accentBrand,
+    buttonContrast: palette.textLabel,
   },
   spacing: {
     s4: 4,
