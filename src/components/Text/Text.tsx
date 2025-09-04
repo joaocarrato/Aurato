@@ -50,21 +50,23 @@ type TextVariants =
   | 'textXl'
   | 'textLg'
   | 'textBase'
+  | 'inputText'
   | 'textSm'
   | 'textXs'
   | 'headline';
 
-const $fontSizes: Record<TextVariants, TextStyle> = {
+export const $fontSizes: Record<TextVariants, TextStyle> = {
   text2xl: { fontSize: 24, lineHeight: 31 },
   textXl: { fontSize: 20, lineHeight: 28 },
   textLg: { fontSize: 18, lineHeight: 29 },
   textBase: { fontSize: 16, lineHeight: 26 },
+  inputText: { fontSize: 16 }, // fix line height on ios devices
   textSm: { fontSize: 14, lineHeight: 22 },
   textXs: { fontSize: 12, lineHeight: 19 },
   headline: { fontSize: 12, lineHeight: 14 },
 };
 
-const $fontVariants = {
+export const $fontVariants = {
   black: 'Roboto Condensed Black',
   bold: 'Roboto Condensed Bold',
   italic: 'Roboto Condensed Italic',

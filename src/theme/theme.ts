@@ -12,6 +12,7 @@ const palette = {
   textHeading: '#E1E1E6',
   textBody: '#c4c4cc',
   textSpan: '#7c7c8a',
+  inputLabel: '#666666',
 
   // accent
   accentBrand: '#00875f',
