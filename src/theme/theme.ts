@@ -12,6 +12,7 @@ const palette = {
   textHeading: '#E1E1E6',
   textBody: '#c4c4cc',
   textSpan: '#7c7c8a',
+  inputLabel: '#666666',
 
   // accent
   accentBrand: '#00875f',
@@ -32,6 +33,9 @@ export const theme = createTheme({
 
     primary: palette.backgroundPrimary,
     primaryContrast: palette.textSpan,
+
+    buttonPrimary: palette.accentBrand,
+    buttonContrast: palette.textLabel,
   },
   spacing: {
     s4: 4,
@@ -44,6 +48,7 @@ export const theme = createTheme({
     s24: 24,
     s32: 32,
     s40: 40,
+    s42: 42,
     s48: 48,
     s56: 56,
   },
