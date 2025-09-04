@@ -48,6 +48,7 @@ export const theme = createTheme({
     s24: 24,
     s32: 32,
     s40: 40,
+    s42: 42,
     s48: 48,
     s56: 56,
   },

@@ -1,27 +1,45 @@
 import React from 'react';
 
-import { Box, PasswordInput, Screen, Text, TextInput } from '@components';
+import {
+  Box,
+  Button,
+  PasswordInput,
+  Screen,
+  Text,
+  TextInput,
+} from '@components';
 
 import { BrandLogo } from '../../../assets/brand/BrandLogo';
 
 export function SignInScreen() {
   return (
-    <Screen>
-      <LogoBrand />
+    <Screen flex={1} justifyContent="space-around">
+      <Box>
+        <LogoBrand />
+        <TextInput
+          label="email"
+          leftIcon="email"
+          placeholder="Digite seu email"
+          boxProps={{ mb: 's20' }}
+        />
 
-      <TextInput
-        label="email"
-        leftIcon="email"
-        placeholder="Digite seu email"
-        boxProps={{ mb: 's20' }}
-      />
+        <PasswordInput
+          label="Senha"
+          leftIcon="lock"
+          placeholder="Digite seu email"
+          boxProps={{ mb: 's42' }}
+        />
 
-      <PasswordInput
-        label="Senha"
-        leftIcon="lock"
-        placeholder="Digite seu email"
-        boxProps={{ mb: 's20' }}
-      />
+        <Button title="Logar" rightIcon />
+      </Box>
+
+      <Box>
+        <Text preset="textBase" mb="s20">
+          Ainda não tem uma conta?
+        </Text>
+
+        <Button title="Cadastrar" rightIcon preset="outline" />
+      </Box>
     </Screen>
   );
 }

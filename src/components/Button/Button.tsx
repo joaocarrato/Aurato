@@ -41,7 +41,11 @@ export function Button({
         <ActivityIndicator />
       ) : (
         <>
-          <Text preset="textBase" color={buttonPreset.content} semiBold>
+          <Text
+            preset="textBase"
+            letterSpacing={0.4}
+            color={buttonPreset.content}
+          >
             {title}
           </Text>
           {rightIcon && (
