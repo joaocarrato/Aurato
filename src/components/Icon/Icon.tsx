@@ -15,6 +15,7 @@ import { CurrencyDollarIcon } from '../../assets/icons/CurrencyDollarIcon';
 import { EditIcon } from '../../assets/icons/EditIcon';
 import { EmailIcon } from '../../assets/icons/EmailIcon';
 import { EyeIcon } from '../../assets/icons/EyeIcon';
+import { EyeOffIcon } from '../../assets/icons/EyeOffIcon';
 import { FilterIcon } from '../../assets/icons/FilterIcon';
 import { LockIcon } from '../../assets/icons/LockIcon';
 import { LogoutIcon } from '../../assets/icons/LogoutIcon';
@@ -71,6 +72,7 @@ const iconRegistry = {
   edit: EditIcon,
   email: EmailIcon,
   eye: EyeIcon,
+  eyeOff: EyeOffIcon,
   filter: FilterIcon,
   lock: LockIcon,
   logout: LogoutIcon,

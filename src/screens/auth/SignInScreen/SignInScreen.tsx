@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Screen, Text, TextInput } from '@components';
+import { Box, PasswordInput, Screen, Text, TextInput } from '@components';
 
 import { BrandLogo } from '../../../assets/brand/BrandLogo';
 
@@ -16,7 +16,7 @@ export function SignInScreen() {
         boxProps={{ mb: 's20' }}
       />
 
-      <TextInput
+      <PasswordInput
         label="Senha"
         leftIcon="lock"
         placeholder="Digite seu email"

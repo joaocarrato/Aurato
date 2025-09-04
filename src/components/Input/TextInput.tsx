@@ -13,16 +13,18 @@ import { Box, BoxProps } from '../Box/Box';
 import { Icon, IconProps } from '../Icon/Icon';
 import { $fontSizes, Text } from '../Text/Text';
 
-interface TextInputProps extends RNTextInputProps {
+export interface TextInputProps extends RNTextInputProps {
   label: string;
   boxProps?: BoxProps;
   leftIcon: IconProps['name'];
+  rightComponent?: React.ReactElement;
 }
 
 export function TextInput({
   label,
   boxProps,
   leftIcon,
+  rightComponent,
   ...textInputProps
 }: TextInputProps) {
   const { colors } = useAppTheme();
@@ -48,6 +50,7 @@ export function TextInput({
             placeholderTextColor={colors.textSpan}
             {...textInputProps}
           />
+          {rightComponent && <Box>{rightComponent}</Box>}
         </Box>
       </Box>
     </Pressable>
