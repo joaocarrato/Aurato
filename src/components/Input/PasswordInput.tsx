@@ -6,7 +6,7 @@ import { TextInput, TextInputProps } from './TextInput';
 
 export function PasswordInput({
   ...props
-}: Omit<TextInputProps, 'secureTextEntry'>) {
+}: Omit<TextInputProps, 'secureTextEntry' | 'leftIcon'>) {
   const [isSecureText, setIsSecureText] = useState(true);
 
   function toggleSecureText() {
@@ -15,6 +15,7 @@ export function PasswordInput({
   return (
     <TextInput
       secureTextEntry={isSecureText}
+      autoComplete="off"
       rightComponent={
         <Icon
           name={isSecureText ? 'eye' : 'eyeOff'}
@@ -24,6 +25,7 @@ export function PasswordInput({
         />
       }
       {...props}
+      leftIcon="lock"
     />
   );
 }

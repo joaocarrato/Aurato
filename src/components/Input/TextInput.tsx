@@ -18,17 +18,20 @@ export interface TextInputProps extends RNTextInputProps {
   boxProps?: BoxProps;
   leftIcon: IconProps['name'];
   rightComponent?: React.ReactElement;
+  errorMessage?: string;
 }
 
 export function TextInput({
   label,
   boxProps,
   leftIcon,
+  errorMessage,
   rightComponent,
   ...textInputProps
 }: TextInputProps) {
   const { colors } = useAppTheme();
 
+  const $inputContainer = getInputContainerStyle(errorMessage);
   const inputRef = useRef<RNTextInput>(null);
 
   function focusInput() {
@@ -37,11 +40,15 @@ export function TextInput({
 
   return (
     <Pressable onPress={focusInput}>
-      <Box>
-        <Text preset="textSm" color="inputLabel" semiBold>
+      <Box {...boxProps}>
+        <Text
+          preset="textSm"
+          color={errorMessage ? 'accentRedDark' : 'inputLabel'}
+          semiBold
+        >
           {label.toUpperCase()}
         </Text>
-        <Box {...$inputContainer} {...boxProps}>
+        <Box {...$inputContainer}>
           <Icon name={leftIcon} color="textSpan" size={24} />
           <RNTextInput
             ref={inputRef}
@@ -52,21 +59,27 @@ export function TextInput({
           />
           {rightComponent && <Box>{rightComponent}</Box>}
         </Box>
+        {errorMessage && (
+          <Text preset="textSm" color="accentRed" mt="s4" letterSpacing={0.4}>
+            {errorMessage}
+          </Text>
+        )}
       </Box>
     </Pressable>
   );
 }
 
-const $inputContainer: BoxProps = {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderBottomWidth: 1,
-  borderBottomColor: 'borderPrimary',
-  p: 's16',
-
-  gap: 's8',
-};
+function getInputContainerStyle(errorMessage?: string): BoxProps {
+  return {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: errorMessage ? 'accentRedDark' : 'borderPrimary',
+    p: 's16',
+    gap: 's8',
+  };
+}
 
 const $inputStyle: StyleProp<TextStyle> = {
   flexGrow: 1,
