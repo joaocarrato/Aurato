@@ -15,6 +15,7 @@ export function PasswordInput({
   return (
     <TextInput
       secureTextEntry={isSecureText}
+      autoComplete="off"
       rightComponent={
         <Icon
           name={isSecureText ? 'eye' : 'eyeOff'}

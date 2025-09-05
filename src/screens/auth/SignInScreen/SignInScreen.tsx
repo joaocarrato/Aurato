@@ -1,21 +1,36 @@
 import React from 'react';
 import { StyleProp, TextStyle } from 'react-native';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+
 import {
   Box,
   Button,
-  PasswordInput,
+  FormInput,
+  FormPasswordInput,
   Screen,
   Text,
-  TextInput,
 } from '@components';
 import { AuthStackScreenProps } from '@routes';
 
 import { AuratoIcon } from '../../../assets/brand/AuratoIcon';
 
+import { signInSchema, SignInSchemaType } from './signInSchema';
+
 export function SignInScreen({
   navigation,
 }: AuthStackScreenProps<'SignInScreen'>) {
+  //TODO: Implement login
+  const { control } = useForm<SignInSchemaType>({
+    resolver: zodResolver(signInSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    mode: 'onChange',
+  });
+
   function navigateToSignUpScreen() {
     navigation.navigate('SignUpScreen');
   }
@@ -24,14 +39,20 @@ export function SignInScreen({
     <Screen flex={1} justifyContent="space-around">
       <Box>
         <LogoBrand />
-        <TextInput
+
+        <FormInput
+          control={control}
+          name="email"
           label="email"
           leftIcon="email"
+          autoCapitalize="none"
           placeholder="Digite seu email"
           boxProps={{ mb: 's20' }}
         />
 
-        <PasswordInput
+        <FormPasswordInput
+          control={control}
+          name="password"
           label="Senha"
           placeholder="Digite seu email"
           boxProps={{ mb: 's42' }}
