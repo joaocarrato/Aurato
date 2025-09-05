@@ -12,17 +12,19 @@ export interface TextProps extends SRTextProps {
   preset?: TextVariants;
   semiBold?: boolean;
   bold?: boolean;
+  aurato?: boolean;
 }
 
 export function Text({
   children,
   preset = 'textLg',
   semiBold,
+  aurato,
   bold,
   style,
   ...srTextProps
 }: TextProps) {
-  const fontFamily = getFontFamily(semiBold, bold);
+  const fontFamily = getFontFamily(semiBold, bold, aurato);
   return (
     <SRText
       style={[$fontSizes[preset], { fontFamily }, style]}
@@ -34,12 +36,14 @@ export function Text({
   );
 }
 
-function getFontFamily(semiBold?: boolean, bold?: boolean) {
+function getFontFamily(semiBold?: boolean, bold?: boolean, aurato?: boolean) {
   switch (true) {
     case bold:
       return $fontVariants.bold;
     case semiBold:
       return $fontVariants.semiBold;
+    case aurato:
+      return $fontVariants.aurato;
     default:
       return $fontVariants.regular;
   }
@@ -73,4 +77,5 @@ export const $fontVariants = {
   medium: 'Roboto Condensed Medium',
   regular: 'Roboto Condensed Regular',
   semiBold: 'Roboto Condensed SemiBold',
+  aurato: 'Cinzel Regular',
 };

@@ -9,7 +9,7 @@ import {
   TextInput,
 } from '@components';
 
-import { BrandLogo } from '../../../assets/brand/BrandLogo';
+import { AuratoIcon } from '../../../assets/brand/AuratoIcon';
 
 export function SignInScreen() {
   return (
@@ -46,21 +46,18 @@ export function SignInScreen() {
 
 function LogoBrand() {
   return (
-    <Box
-      flexDirection="row"
-      justifyContent="center"
-      alignItems="center"
-      mb="s56"
-    >
-      <BrandLogo />
+    <Box justifyContent="center" alignItems="center" mb="s56">
+      <AuratoIcon size={120} />
       <Text
-        preset="text2xl"
-        color="textHeading"
-        ml="s16"
-        bold
-        style={{ fontSize: 32 }}
+        aurato
+        style={{
+          fontSize: 34,
+          paddingTop: 14,
+          fontWeight: 'bold',
+          color: '#40916c',
+        }}
       >
-        DT Money
+        Aurato
       </Text>
     </Box>
   );
