@@ -17,6 +17,12 @@
 		79119CB12E5FAE22001B5D69 /* Roboto_Condensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79119CAA2E5FAE22001B5D69 /* Roboto_Condensed-Italic.ttf */; };
 		79119CB22E5FAE22001B5D69 /* Roboto_Condensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79119CAB2E5FAE22001B5D69 /* Roboto_Condensed-Medium.ttf */; };
 		79119CB32E5FAE22001B5D69 /* Roboto_Condensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79119CA82E5FAE22001B5D69 /* Roboto_Condensed-Black.ttf */; };
+		796B0C4F2E6AAFA20083AFB1 /* Cinzel-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796B0C4A2E6AAFA20083AFB1 /* Cinzel-Bold.ttf */; };
+		796B0C502E6AAFA20083AFB1 /* Cinzel-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796B0C4B2E6AAFA20083AFB1 /* Cinzel-ExtraBold.ttf */; };
+		796B0C512E6AAFA20083AFB1 /* Cinzel-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796B0C4E2E6AAFA20083AFB1 /* Cinzel-SemiBold.ttf */; };
+		796B0C522E6AAFA20083AFB1 /* Cinzel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796B0C4D2E6AAFA20083AFB1 /* Cinzel-Regular.ttf */; };
+		796B0C532E6AAFA20083AFB1 /* Cinzel-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796B0C492E6AAFA20083AFB1 /* Cinzel-Black.ttf */; };
+		796B0C542E6AAFA20083AFB1 /* Cinzel-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796B0C4C2E6AAFA20083AFB1 /* Cinzel-Medium.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		79119CAB2E5FAE22001B5D69 /* Roboto_Condensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto_Condensed-Medium.ttf"; sourceTree = "<group>"; };
 		79119CAC2E5FAE22001B5D69 /* Roboto_Condensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto_Condensed-Regular.ttf"; sourceTree = "<group>"; };
 		79119CAD2E5FAE22001B5D69 /* Roboto_Condensed-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto_Condensed-SemiBold.ttf"; sourceTree = "<group>"; };
+		796B0C492E6AAFA20083AFB1 /* Cinzel-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Black.ttf"; sourceTree = "<group>"; };
+		796B0C4A2E6AAFA20083AFB1 /* Cinzel-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Bold.ttf"; sourceTree = "<group>"; };
+		796B0C4B2E6AAFA20083AFB1 /* Cinzel-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-ExtraBold.ttf"; sourceTree = "<group>"; };
+		796B0C4C2E6AAFA20083AFB1 /* Cinzel-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Medium.ttf"; sourceTree = "<group>"; };
+		796B0C4D2E6AAFA20083AFB1 /* Cinzel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-Regular.ttf"; sourceTree = "<group>"; };
+		796B0C4E2E6AAFA20083AFB1 /* Cinzel-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DTMoney/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -82,6 +94,12 @@
 				79119CAB2E5FAE22001B5D69 /* Roboto_Condensed-Medium.ttf */,
 				79119CAC2E5FAE22001B5D69 /* Roboto_Condensed-Regular.ttf */,
 				79119CAD2E5FAE22001B5D69 /* Roboto_Condensed-SemiBold.ttf */,
+				796B0C492E6AAFA20083AFB1 /* Cinzel-Black.ttf */,
+				796B0C4A2E6AAFA20083AFB1 /* Cinzel-Bold.ttf */,
+				796B0C4B2E6AAFA20083AFB1 /* Cinzel-ExtraBold.ttf */,
+				796B0C4C2E6AAFA20083AFB1 /* Cinzel-Medium.ttf */,
+				796B0C4D2E6AAFA20083AFB1 /* Cinzel-Regular.ttf */,
+				796B0C4E2E6AAFA20083AFB1 /* Cinzel-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -186,6 +204,12 @@
 			files = (
 				79119CAE2E5FAE22001B5D69 /* Roboto_Condensed-Regular.ttf in Resources */,
 				79119CAF2E5FAE22001B5D69 /* Roboto_Condensed-SemiBold.ttf in Resources */,
+				796B0C4F2E6AAFA20083AFB1 /* Cinzel-Bold.ttf in Resources */,
+				796B0C502E6AAFA20083AFB1 /* Cinzel-ExtraBold.ttf in Resources */,
+				796B0C512E6AAFA20083AFB1 /* Cinzel-SemiBold.ttf in Resources */,
+				796B0C522E6AAFA20083AFB1 /* Cinzel-Regular.ttf in Resources */,
+				796B0C532E6AAFA20083AFB1 /* Cinzel-Black.ttf in Resources */,
+				796B0C542E6AAFA20083AFB1 /* Cinzel-Medium.ttf in Resources */,
 				79119CB02E5FAE22001B5D69 /* Roboto_Condensed-Bold.ttf in Resources */,
 				79119CB12E5FAE22001B5D69 /* Roboto_Condensed-Italic.ttf in Resources */,
 				79119CB22E5FAE22001B5D69 /* Roboto_Condensed-Medium.ttf in Resources */,
