@@ -1,14 +1,14 @@
 import { ThemeProvider } from '@shopify/restyle';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { SignInScreen } from '@screens';
+import { Routes } from '@routes';
 import { theme } from '@theme';
 
 function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <SignInScreen />
+        <Routes />
       </ThemeProvider>
     </SafeAreaProvider>
   );

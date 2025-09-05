@@ -6,7 +6,7 @@ import { TextInput, TextInputProps } from './TextInput';
 
 export function PasswordInput({
   ...props
-}: Omit<TextInputProps, 'secureTextEntry'>) {
+}: Omit<TextInputProps, 'secureTextEntry' | 'leftIcon'>) {
   const [isSecureText, setIsSecureText] = useState(true);
 
   function toggleSecureText() {
@@ -24,6 +24,7 @@ export function PasswordInput({
         />
       }
       {...props}
+      leftIcon="lock"
     />
   );
 }
