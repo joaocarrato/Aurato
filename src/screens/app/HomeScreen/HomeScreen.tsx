@@ -60,7 +60,13 @@ export function HomeScreen() {
 
       <BoxInput boxProps={{ mb: 's12' }} />
 
-      <TransactionCard />
+      <TransactionCard
+        description="Hambúrguer"
+        type="expense"
+        value="59,00"
+        category="Alimentação"
+        date="05/09/2025"
+      />
     </Screen>
   );
 }
