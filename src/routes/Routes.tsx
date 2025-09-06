@@ -2,12 +2,13 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 
-import { AuthStack } from './AuthStack';
+import { HomeScreen } from '@screens';
 
 export function Routes() {
   return (
     <NavigationContainer>
-      <AuthStack />
+      {/* <AuthStack /> */}
+      <HomeScreen />
     </NavigationContainer>
   );
 }
