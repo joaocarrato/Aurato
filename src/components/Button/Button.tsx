@@ -72,6 +72,5 @@ function getButtonContainerStyle(
     flexDirection: rightIcon ? 'row' : undefined,
     borderRadius: 's8',
     activeOpacity: 0.9,
-    height: 57,
   };
 }

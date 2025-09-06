@@ -23,6 +23,8 @@ const palette = {
   accentBlue: '#5a86f7',
   accentBlueDark: '#284daa',
 
+  brandPrimary: '#40916c',
+
   // border
   borderPrimary: '#3d3d3d',
 };
@@ -53,6 +55,7 @@ export const theme = createTheme({
     s56: 56,
   },
   borderRadii: {
+    s6: 6,
     s8: 8,
     s12: 12,
     s16: 16,
