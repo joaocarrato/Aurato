@@ -1,5 +1,11 @@
 import React from 'react';
-import { Dimensions, FlatList, ListRenderItemInfo } from 'react-native';
+import {
+  Dimensions,
+  FlatList,
+  ListRenderItemInfo,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
 import {
   Box,
@@ -28,17 +34,13 @@ export function HomeScreen() {
     );
   }
   return (
-    <Screen flex={1} position="relative" bg="backgroundSecondary">
+    <Screen flex={1} bg="backgroundSecondary">
       <AbsoluteBackground />
       <HomeHeader boxProps={{ mb: 's32' }} />
 
       <FlatList
         data={mockCard}
-        style={{
-          marginRight: -24,
-          maxHeight: 141,
-          marginBottom: 32,
-        }}
+        style={$cardStyle}
         contentContainerStyle={{ gap: 16 }}
         ListFooterComponent={<Box />}
         horizontal
@@ -70,6 +72,13 @@ export function HomeScreen() {
     </Screen>
   );
 }
+
+const $cardStyle: StyleProp<ViewStyle> = {
+  paddingLeft: 24,
+  marginHorizontal: -24,
+  maxHeight: 141,
+  marginBottom: 32,
+};
 
 function AbsoluteBackground() {
   return (
