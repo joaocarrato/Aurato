@@ -1,7 +1,15 @@
 import React from 'react';
 import { Dimensions, FlatList, ListRenderItemInfo } from 'react-native';
 
-import { Box, Card, CardProps, Screen, Text } from '@components';
+import {
+  Box,
+  BoxInput,
+  Card,
+  CardProps,
+  Screen,
+  Text,
+  TransactionCard,
+} from '@components';
 
 import { HomeHeader } from './components/HomeHeader';
 
@@ -49,6 +57,10 @@ export function HomeScreen() {
         </Text>
         <Text preset="textBase">4 itens</Text>
       </Box>
+
+      <BoxInput boxProps={{ mb: 's12' }} />
+
+      <TransactionCard />
     </Screen>
   );
 }
