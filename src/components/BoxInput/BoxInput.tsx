@@ -9,14 +9,16 @@ import { useAppTheme } from '@hooks';
 
 import { Box, BoxProps } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
+import { TextInputProps } from '../Input/TextInput';
 import { $fontSizes } from '../Text/Text';
 
 type Props = {
   onPress?: PressableProps['onPress'];
   boxProps?: BoxProps;
-};
+  rightIcon?: boolean;
+} & Omit<TextInputProps, 'rightComponent' | 'label' | 'leftIcon'>;
 
-export function BoxInput({ onPress, boxProps }: Props) {
+export function BoxInput({ onPress, boxProps, rightIcon, ...rest }: Props) {
   const { colors } = useAppTheme();
 
   const inputRef = useRef<RNTextInput>(null);
@@ -36,10 +38,12 @@ export function BoxInput({ onPress, boxProps }: Props) {
             color: colors.textSpan,
           }}
           placeholderTextColor={colors.textSpan}
-          placeholder="Busque uma transação"
+          {...rest}
         />
 
-        <Icon name="filter" color="accentBrand" size={25} onPress={onPress} />
+        {rightIcon && (
+          <Icon name="filter" color="accentBrand" size={25} onPress={onPress} />
+        )}
       </Box>
     </Pressable>
   );

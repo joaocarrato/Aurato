@@ -13,9 +13,10 @@ import { AuratoIcon } from '../../../../assets/brand/AuratoIcon';
 
 type Props = {
   boxProps?: BoxProps;
+  onPress?: () => void;
 };
 
-export function HomeHeader({ boxProps }: Props) {
+export function HomeHeader({ boxProps, onPress }: Props) {
   return (
     <Box
       flexDirection="row"
@@ -44,7 +45,7 @@ export function HomeHeader({ boxProps }: Props) {
         </TouchableOpacityBox>
       </Box>
 
-      <Button title="Nova transação" py="s10" />
+      <Button title="Nova transação" py="s10" onPress={onPress} />
     </Box>
   );
 }
