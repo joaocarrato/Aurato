@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dimensions,
   FlatList,
@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import {
+  BottomSheet,
   Box,
   BoxInput,
   Card,
@@ -28,15 +29,22 @@ const mockCard: CardProps[] = [
 ];
 
 export function HomeScreen() {
+  const [visible, setVisible] = useState<boolean>(false);
+
   function renderItem({ item }: ListRenderItemInfo<CardProps>) {
     return (
       <Card type={item.type} value={item.value} lastDate={item.lastDate} />
     );
   }
+
+  function handleBottomSheet() {
+    setVisible(prev => !prev);
+  }
+
   return (
     <Screen flex={1} bg="backgroundSecondary">
       <AbsoluteBackground />
-      <HomeHeader boxProps={{ mb: 's32' }} />
+      <HomeHeader boxProps={{ mb: 's32' }} onPress={() => setVisible(true)} />
 
       <FlatList
         data={mockCard}
@@ -60,7 +68,11 @@ export function HomeScreen() {
         <Text preset="textBase">4 itens</Text>
       </Box>
 
-      <BoxInput boxProps={{ mb: 's12' }} />
+      <BoxInput
+        boxProps={{ mb: 's12' }}
+        rightIcon
+        placeholder="Busque uma transação"
+      />
 
       <TransactionCard
         description="Hambúrguer"
@@ -69,6 +81,8 @@ export function HomeScreen() {
         category="Alimentação"
         date="05/09/2025"
       />
+
+      <BottomSheet visible={visible} onPress={handleBottomSheet} />
     </Screen>
   );
 }
