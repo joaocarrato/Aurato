@@ -1,25 +1,39 @@
-import React, { forwardRef, useCallback, useMemo } from 'react';
-import { StyleProp, TextStyle } from 'react-native';
+import React, { forwardRef, useCallback, useMemo, useState } from 'react';
+import { StyleProp, TextInputProps, TextStyle } from 'react-native';
 
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetTextInput,
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
+import { BottomSheetTextInputProps } from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheetTextInput';
 
-import { Box, Icon, Text } from '@components';
+import {
+  Box,
+  Button,
+  Icon,
+  Text,
+  TransactionButton,
+  TransactionButtonType,
+} from '@components';
 import { useAppTheme } from '@hooks';
 import { theme } from '@theme';
 
 interface Props {
-  onPress?: () => void;
+  onClose?: () => void;
 }
 
 type Ref = BottomSheet;
 
 export const CustomBottomSheet = forwardRef<Ref, Props>((props, ref) => {
+  const [transactionType, setTransactionType] =
+    useState<TransactionButtonType | null>(null);
+  const [description, setDescription] = useState<string>('');
+  const [price, setPrice] = useState<string>('');
+  const [category, setCategory] = useState<string>('');
+
   const { colors } = useAppTheme();
-  const snapPoints = useMemo(() => ['60%', '60%'], []);
+  const snapPoints = useMemo(() => ['60%'], []);
 
   const renderBackdrop = useCallback(
     (_props: any) => (
@@ -33,14 +47,31 @@ export const CustomBottomSheet = forwardRef<Ref, Props>((props, ref) => {
     [],
   );
 
+  function handleSelect(type: TransactionButtonType) {
+    setTransactionType(type);
+    console.log('Selecionado: ', type);
+  }
+
+  function resetForm() {
+    setDescription('');
+    setPrice('');
+    setCategory('');
+    setTransactionType(null);
+  }
+
   return (
     <BottomSheet
       ref={ref}
+      index={-1}
+      onChange={index => {
+        if (index === -1) resetForm();
+      }}
       enableHandlePanningGesture={false}
       enableContentPanningGesture={false}
       enableDynamicSizing={false}
       backdropComponent={renderBackdrop}
       snapPoints={snapPoints}
+      keyboardBehavior="fillParent"
       backgroundStyle={{ backgroundColor: colors.backgroundSecondary }}
       handleIndicatorStyle={{ backgroundColor: colors.backgroundSecondary }}
     >
@@ -54,35 +85,71 @@ export const CustomBottomSheet = forwardRef<Ref, Props>((props, ref) => {
           <Text preset="textXl" color="textLabel" semiBold>
             Nova transação
           </Text>
-          <Icon name="x" size={24} color="textSpan" onPress={props.onPress} />
+          <Icon name="x" size={24} color="textSpan" onPress={props.onClose} />
         </Box>
 
-        <BottomSheetTextInput
+        <BottomSheetInput
+          value={description}
+          onChangeText={setDescription}
           placeholder="Descrição"
-          style={$textInputStyle}
-          placeholderTextColor={colors.textSpan}
         />
 
-        <BottomSheetTextInput
+        <BottomSheetInput
+          value={price}
+          onChangeText={setPrice}
+          keyboardType="numeric"
           placeholder="Preço"
-          style={$textInputStyle}
-          placeholderTextColor={colors.textSpan}
         />
 
-        <BottomSheetTextInput
+        <BottomSheetInput
+          value={category}
+          onChangeText={setCategory}
           placeholder="Categoria"
-          style={$textInputStyle}
-          placeholderTextColor={colors.textSpan}
+        />
+
+        <Box flexDirection="row" alignItems="center" gap="s8" mt="s12" mb="s40">
+          <TransactionButton
+            type="income"
+            isSelected={transactionType === 'income'}
+            onPress={handleSelect}
+          />
+          <TransactionButton
+            type="expense"
+            isSelected={transactionType === 'expense'}
+            onPress={handleSelect}
+          />
+        </Box>
+
+        <Button
+          title="Cadastrar"
+          onPress={() =>
+            console.log(
+              `Descrição: ${description}; Preço: ${price}; Categoria: ${category}; Type: ${transactionType}`,
+            )
+          }
         />
       </BottomSheetView>
     </BottomSheet>
   );
 });
 
+function BottomSheetInput({
+  ...props
+}: BottomSheetTextInputProps & TextInputProps) {
+  return (
+    <BottomSheetTextInput
+      style={$textInputStyle}
+      placeholderTextColor={theme.colors.textSpan}
+      {...props}
+    />
+  );
+}
+
 const $textInputStyle: StyleProp<TextStyle> = {
   backgroundColor: theme.colors.backgroundPrimary,
-  padding: 16,
-  borderRadius: 6,
+  padding: theme.spacing.s16,
+  borderRadius: theme.borderRadii.s6,
   fontSize: 16,
-  marginBottom: 12,
+  marginBottom: theme.spacing.s12,
+  color: theme.colors.textLabel,
 };

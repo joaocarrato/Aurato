@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box';
 import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
 
+export type TransactionButtonType = 'income' | 'expense';
+
 type TransactionButtonProps = {
-  type: 'income' | 'expense';
-  isSelected?: boolean;
+  type: TransactionButtonType;
+  isSelected: boolean;
+  onPress: (type: TransactionButtonType) => void;
 };
 
-export function TransactionButton({ type }: TransactionButtonProps) {
-  const [isSelected, setIsSelected] = useState(false);
-
+export function TransactionButton({
+  type,
+  isSelected,
+  onPress,
+}: TransactionButtonProps) {
   const $buttonContainer: TouchableOpacityBoxProps = {
     flexDirection: 'row',
     alignItems: 'center',
@@ -28,11 +33,8 @@ export function TransactionButton({ type }: TransactionButtonProps) {
     borderRadius: 's8',
   };
 
-  function toggleSelected() {
-    setIsSelected(prev => !prev);
-  }
   return (
-    <TouchableOpacityBox {...$buttonContainer} onPress={toggleSelected}>
+    <TouchableOpacityBox {...$buttonContainer} onPress={() => onPress(type)}>
       <Icon
         name={type === 'income' ? 'arrowCircleUp' : 'arrowCircleDown'}
         color={type === 'income' ? 'accentBrand' : 'accentRed'}

@@ -83,7 +83,7 @@ export function HomeScreen() {
         date="05/09/2025"
       />
 
-      <CustomBottomSheet ref={bottomSheetRef} onPress={handleClosePress} />
+      <CustomBottomSheet ref={bottomSheetRef} onClose={handleClosePress} />
     </Screen>
   );
 }
