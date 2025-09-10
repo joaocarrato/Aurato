@@ -71,9 +71,9 @@ export const CustomBottomSheet = forwardRef<Ref, Props>((props, ref) => {
       enableDynamicSizing={false}
       backdropComponent={renderBackdrop}
       snapPoints={snapPoints}
-      keyboardBehavior="fillParent"
       backgroundStyle={{ backgroundColor: colors.backgroundSecondary }}
       handleIndicatorStyle={{ backgroundColor: colors.backgroundSecondary }}
+      keyboardBlurBehavior="restore"
     >
       <BottomSheetView style={{ padding: 24 }}>
         <Box
