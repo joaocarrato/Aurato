@@ -10,5 +10,5 @@ export * from './Form/FormPasswordInput';
 export * from './Card/Card';
 export * from './BoxInput/BoxInput';
 export * from './TransactionCard/TransactionCard';
-export * from './BottomSheet/BottomSheet';
 export * from './TransactionButton/TransactionButton';
+export * from './CustomBottomSheet/CustomBottomSheet';
