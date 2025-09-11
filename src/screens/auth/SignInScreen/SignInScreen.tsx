@@ -54,7 +54,7 @@ export function SignInScreen({
           control={control}
           name="password"
           label="Senha"
-          placeholder="Digite seu email"
+          placeholder="Digite sua senha"
           boxProps={{ mb: 's42' }}
         />
 

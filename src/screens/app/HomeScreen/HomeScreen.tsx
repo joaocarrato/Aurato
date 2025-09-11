@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import {
   Dimensions,
   FlatList,
@@ -7,12 +7,14 @@ import {
   ViewStyle,
 } from 'react-native';
 
+import BottomSheet from '@gorhom/bottom-sheet';
+
 import {
-  BottomSheet,
   Box,
   BoxInput,
   Card,
   CardProps,
+  CustomBottomSheet,
   Screen,
   Text,
   TransactionCard,
@@ -29,7 +31,7 @@ const mockCard: CardProps[] = [
 ];
 
 export function HomeScreen() {
-  const [visible, setVisible] = useState<boolean>(false);
+  const bottomSheetRef = useRef<BottomSheet>(null);
 
   function renderItem({ item }: ListRenderItemInfo<CardProps>) {
     return (
@@ -37,14 +39,13 @@ export function HomeScreen() {
     );
   }
 
-  function handleBottomSheet() {
-    setVisible(prev => !prev);
-  }
+  const handleClosePress = () => bottomSheetRef.current?.close();
+  const handleOpenPress = () => bottomSheetRef.current?.expand();
 
   return (
     <Screen flex={1} bg="backgroundSecondary">
       <AbsoluteBackground />
-      <HomeHeader boxProps={{ mb: 's32' }} onPress={() => setVisible(true)} />
+      <HomeHeader boxProps={{ mb: 's32' }} onPress={handleOpenPress} />
 
       <FlatList
         data={mockCard}
@@ -82,7 +83,7 @@ export function HomeScreen() {
         date="05/09/2025"
       />
 
-      <BottomSheet visible={visible} onPress={handleBottomSheet} />
+      <CustomBottomSheet ref={bottomSheetRef} onClose={handleClosePress} />
     </Screen>
   );
 }
